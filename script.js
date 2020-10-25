@@ -25,4 +25,39 @@ var question1 = {
     multipleChoice: ["call myFunction()", "myFunction()", "call function myFunction()"]
 };
 
+// listen to button click
+
+
+function quiz(x) {
+
+    answers.innerHTML = "";
+    question.textContent = x.question;
+    var choices = x.choices;
+
+
+    for (var i = 0; i< choices.length; i++){
+        var li = document.createElement("li");
+        li.setAttribute("id", [i]);
+        li.textContent = choices[i]; 
+        var br = document.createElement("br");
+        answers.appendChild(li);
+        answers.appendChild(br);
+
+    };
+};
+// Wrong answer decision
+function Wrong() {
+    verdict.textContent = "Wrong Answer!";
+
+};
+
+// questions go to next question after clicked answer
+
+function question1() {
+
+    quiz(question1);
+    answers.addEventListener("click", function(event) {
+        var target = event.target;
+    }
+}
 
